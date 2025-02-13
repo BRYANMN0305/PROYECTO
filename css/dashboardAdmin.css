@@ -1,0 +1,443 @@
+/* Librería para la fuente */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+* {
+    font-family: "Montserrat", serif; /* Tipo de letra de la interfaz */
+    margin: 0;
+    padding: 0;
+    /* Sin margen exterior e interior en todo el documento */
+    box-sizing: border-box; /* Tamaño de los elementos incluye padding y border */
+}
+
+/* Variables */
+:root {
+    --body-color: #9827800D; /* Color del fondo */
+    --sidebar-color: #b73838; /* Color de la barra lateral */
+    --primary-color: #802424; /* Color principal */
+    --primary-color-light: #bd24d80d; /* Versión más clara del color principal */
+    --toggle-color: #fdebd0; /* Color para el toggle */
+    --text-color: #0e0d0d; /* Color del texto */
+    --tran-03: all 0.2s ease; /* Transición rápida */
+    --tran-04: all 0.3s ease; /* Transición media */
+    --tran-05: all 0.4s ease; /* Transición lenta */
+}
+
+/* Cuerpo */
+body {
+    min-height: 100vh; /* Altura mínima del cuerpo */
+    background-color: var(--body-color); /* Color de fondo del cuerpo */
+    transition: var(--tran-05); /* Transición en el cambio de estilos */
+}
+
+::selection {
+    background-color: var(--primary-color); /* Color de fondo al seleccionar texto */
+    color: #FFFFFF; /* Color del texto seleccionado */
+}
+
+/* Variables para el modo oscuro */
+body.dark {
+    --body-color: #18191A; /* Color de fondo oscuro */
+    --sidebar-color: #242526; /* Color de barra lateral en modo oscuro */
+    --primary-color-light: #3A3B3C; /* Color claro en modo oscuro */
+    --toggle-color: #FFFFFF; /* Color del toggle en modo oscuro */
+    --text-color: #CCCCCC; /* Color del texto en modo oscuro */
+}
+
+/* Barra lateral */
+.sidebar {
+    position: fixed; /* Posición fija en la página */
+    top: 0;
+    left: 0;
+    height: 100%; /* Altura completa */
+    width: 250px; /* Ancho de la barra lateral */
+    padding: 10px 14px; /* Espaciado interno */
+    background: var(--sidebar-color); /* Color de fondo de la barra lateral */
+    transition: var(--tran-05); /* Transición en el tamaño */
+    z-index: 100; /* Prioridad visual */
+}
+
+/* Cantidad de espacio que ocupa la barra cuando se pliega */
+.sidebar.close {
+    width: 88px; /* Ancho reducido al cerrar */
+}
+
+/* Posicionamiento de iconos */
+.sidebar li {
+    height: 50px; /* Altura de los elementos de lista */
+    list-style: none; /* Sin viñetas en la lista */
+    display: flex; /* Uso de flexbox */
+    align-items: center; /* Alineación vertical */
+    margin-top: 10px; /* Espaciado superior */
+}
+
+.sidebar header .image,
+.sidebar .icon {
+    min-width: 60px; /* Ancho mínimo de iconos y logo */
+    border-radius: 6px; /* Bordes redondeados */
+}
+
+.sidebar .icon {
+    height: 100%; /* Altura completa */
+    display: flex; /* Uso de flexbox */
+    align-items: center; /* Alineación vertical centrada */
+    justify-content: center; /* Alineación horizontal centrada */
+    font-size: 20px; /* Tamaño del texto o icono */
+}
+
+.sidebar .text,
+.sidebar .icon {
+    color: var(--text-color); /* Color del texto e iconos */
+    transition: var(--tran-83); /* Transición en el cambio de color */
+}
+
+/* Configuración del texto */
+.sidebar .text {
+    font-size: 15px; /* Tamaño de la fuente */
+    font-weight: 500; /* Peso de la fuente */
+    white-space: nowrap; /* Texto sin saltos de línea */
+    opacity: 1; /* Texto visible */
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.sidebar.close .text {
+    opacity: 0; /* Ocultar texto cuando la barra lateral está cerrada */
+}
+
+/* Header de la barra lateral */
+.sidebar header {
+    position: relative; /* Posicionamiento relativo para el contenido */
+}
+
+.sidebar header .logo {
+    display: flex;
+    flex-direction: column; /* Disposición en columna del logo */
+}
+
+.name {
+    margin-top: 2px;
+    font-size: 18px; /* Tamaño del texto del nombre */
+    font-weight: 600; /* Peso del texto */
+}
+
+.profe {
+    font-size: 16px; /* Tamaño del texto del subtítulo */
+    margin-top: -2px; /* Ajuste de espaciado superior */
+    display: block;
+}
+
+.sidebar header .image {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Imagen centrada */
+}
+
+.sidebar header .image img {
+    width: 40px; /* Ancho de la imagen del logo */
+    border-radius: 6px; /* Bordes redondeados */
+}
+
+/* Toggle de la barra lateral */
+.sidebar header .toggle {
+    position: absolute;
+    top: 20%;
+    right: 0px;
+    height: 35px; /* Tamaño del botón de toggle */
+    width: 35px;
+    background-color: var(--primary-color); /* Color de fondo del toggle */
+    color: var(--sidebar-color); /* Color del icono */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrando el contenido */
+    border-radius: 5px;
+    cursor: pointer; /* Cursor cambia a pointer */
+    transition: var(--tran-05); /* Transición en el cambio de color */
+}
+
+body.dark .sidebar header .toggle {
+    color: var(--text-color); /* Color del toggle en modo oscuro */
+}
+
+.sidebar.close .toggle {
+    width: 100%; /* Ancho completo del toggle en modo cerrado */
+    top: 20%;
+}
+
+/* Menú de la barra lateral */
+.sidebar .menu {
+    margin-top: 40px; /* Espaciado superior */
+}
+
+.sidebar li a {
+    list-style: none;
+    height: 100%;
+    background-color: transparent; /* Fondo transparente */
+    display: flex; /* Uso de flexbox */
+    align-items: center; /* Alineación vertical */
+    height: 100%;
+    width: 100%;
+    border-radius: 6px; /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado en el texto */
+    transition: var(--tran-03); /* Transición suave en el hover */
+}
+
+sidebar li a:hover {
+    background-color: var(--primary-color); /* Fondo al pasar el cursor */
+}
+
+.sidebar li a:hover .icon {
+    background-color: var(--primary-color); /* Fondo del icono al hover */
+    border-radius: 6px; /* Mantiene bordes redondeados */
+}
+
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text {
+    color: var(--toggle-color); /* Color de icono y texto al hover */
+    height: 100%;
+}
+
+/* Barra de menú de la barra lateral */
+.sidebar .menu-bar {
+    height: calc(100% - 55px); /* Altura de la barra de menú restando el header */
+    display: flex; /* Uso de flexbox */
+    flex-direction: column; /* Disposición en columna */
+    justify-content: space-between; /* Espacio entre elementos */
+    overflow-y: scroll; /* Habilita el scroll vertical */
+}
+
+.menu-bar::-webkit-scrollbar {
+    display: none; /* Oculta la barra de desplazamiento */
+}
+
+/* Modo oscuro de la barra de menú */
+.sidebar .menu-bar .mode {
+    border-radius: 6px; /* Bordes redondeados */
+    background-color: var(--primary-color-light); /* Color de fondo del modo */
+    position: relative; /* Posicionamiento relativo para los elementos internos */
+    transition: var(--tran-05); /* Transición suave */
+    background-color: #802424; /* Color de fondo alternativo */
+}
+
+/* Transición modo oscuro*/
+body.dark .sidebar .menu-bar .mode {
+    border-radius: 6px; /* Bordes redondeados en modo oscuro */
+    background-color: var(--primary-color-light); /* Color claro en modo oscuro */
+    position: relative;
+    transition: var(--tran-05); /* Transición suave */
+    background-color: #665f5f; /* Color de fondo en modo oscuro */
+}
+
+/* Sol y luna en el modo */
+.menu-bar .mode .sun-moon {
+    height: 50px; /* Altura del contenedor */
+    width: 60px; /* Ancho del contenedor */
+}
+
+.mode .sun-moon i {
+    position: absolute; /* Posicionamiento absoluto de los íconos */
+}
+
+.mode .sun-moon i .sun {
+    opacity: 0; /* Sol oculto en modo normal */
+}
+
+body.dark .mode .sun-moon i.sun {
+    opacity: 1; /* Sol visible en modo oscuro */
+}
+
+body.dark .mode .sun-moon i.moon {
+    opacity: 0; /* Luna oculta en modo oscuro */
+}
+
+/* Contenido inferior del menú */
+.menu-bar .bottom-content .toggle-switch {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    min-width: 60px; /* Ancho mínimo del toggle switch */
+    display: flex; /* Uso de flexbox */
+    align-items: center; /* Alineación vertical */
+    justify-content: center; /* Alineación horizontal */
+    border-radius: 6px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor en forma de mano */
+}
+
+/* Toggle switch para cambiar de modo */
+.toggle-switch .switch {
+    position: relative;
+    height: 22px; /* Altura del interruptor */
+    width: 40px; /* Ancho del interruptor */
+    border-radius: 25px; /* Bordes completamente redondeados */
+    background-color: var(--toggle-color); /* Color de fondo del interruptor */
+    transition: var(--tran-05); /* Transición suave */
+}
+
+.switch::before {
+    content: ''; /* Contenido vacío para el círculo del switch */
+    position: absolute;
+    height: 15px; /* Altura del círculo */
+    width: 15px; /* Ancho del círculo */
+    border-radius: 50%; /* Bordes redondeados */
+    top: 50%; /* Centrado verticalmente */
+    left: 5px; /* Posicionamiento a la izquierda */
+    transform: translateY(-50%); /* Ajusta posición vertical */
+    background-color: var(--sidebar-color); /* Color del círculo */
+    transition: var(--tran-04); /* Transición de movimiento */
+}
+
+body.dark .switch::before {
+    left: 20px; /* Posicionamiento a la derecha en modo oscuro */
+}
+
+/* Estilo de la página principal */
+.home {
+    position: absolute;
+    top: 0;
+    left: 250px; /* Ajuste del margen izquierdo */
+    height: 100%; /* Altura completa */
+    width: 100%; /* Ancho completo */
+    background-color: var(--body-color); /* Color de fondo del cuerpo */
+    transition: var(--tran-05); /* Transición en el cambio de estilo */
+}
+
+.home .text {
+    font-size: 50px; /* Tamaño del texto principal */
+    font-weight: 500; /* Peso del texto */
+    color: var(--text-color); /* Color del texto */
+    padding: 12px 60px; /* Espaciado interno */
+}
+
+.sidebar.close~.home {
+    left: 70px; /* Ajuste del margen izquierdo al cerrar la barra lateral */
+    height: 100vh; /* Altura completa de la vista */
+    width: calc(100%-70px); /* Ancho ajustado al cerrar la barra */
+}
+
+body.dark .home .text {
+    color: var(--text-color); /* Color del texto en modo oscuro */
+}
+
+/* Cuadro de entrada modo claro */
+.entrance {
+    border: 2px solid black; /* Borde negro */
+    margin-top: 3%; /* Margen superior */
+    width: 250px; /* Ancho del botón */
+    height: 150px; /* Altura del botón */
+    margin-left: 18%; /* Margen izquierdo */
+    justify-content: center; /* Centrado del contenido */
+    text-align: center; /* Texto centrado */
+    font-size: 20px; /* Tamaño del texto */
+    background-color: #b73838; /* Color de fondo del cuadro */
+    border-radius: 7px; /* Bordes redondeados */
+}
+
+/* Cuadro de salida modo claro*/
+.leaves {
+    border: 2px solid black; /* Borde negro */
+    width: 250px; /* Ancho del cuadro */
+    height: 150px; /* Altura del cuadro */
+    margin-left: 18%; /* Margen izquierdo */
+    margin-top: 15%; /* Margen superior */
+    justify-content: center; /* Centrado del contenido */
+    text-align: center; /* Texto centrado */
+    font-size: 20px; /* Tamaño del texto */
+    background-color: #b73838; /* Color de fondo del cuadro */
+    border-radius: 7px; /* Bordes redondeados */
+}
+
+/* Cuadro de entrada modo oscuro*/
+body.dark .entrance {
+    margin-top: 3%; /* Margen superior en modo oscuro */
+    border: 2px solid black; /* Borde negro */
+    width: 250px; /* Ancho del cuadro */
+    height: 150px; /* Altura del cuadro */
+    margin-left: 18%; /* Margen izquierdo en modo oscuro */
+    justify-content: center; /* Centrado del contenido */
+    text-align: center; /* Texto centrado */
+    font-size: 20px; /* Tamaño del texto */
+    background-color: #6e6161; /* Color de fondo en modo oscuro */
+    border-radius: 7px; /* Bordes redondeados */
+}
+
+/* Cuadro de salida modo oscuro*/
+body.dark .leaves {
+    border: 2px solid black; /* Borde negro en modo oscuro */
+    width: 250px; /* Ancho del cuadro */
+    height: 150px; /* Altura del cuadro */
+    margin-left: 18%; /* Margen izquierdo en modo oscuro */
+    margin-top: 15%; /* Margen superior en modo oscuro */
+    justify-content: center; /* Centrado del contenido */
+    text-align: center; /* Texto centrado */
+    font-size: 20px; /* Tamaño del texto */
+    background-color: #6e6161; /* Color de fondo en modo oscuro */
+    border-radius: 7px; /* Bordes redondeados */
+}
+
+/* Cuadro de mapa modo claro */
+.map {
+    border: 2px solid black; /* Borde negro */
+    width: 65%; /* Ancho del cuadro */
+    height: 345px; /* Altura del cuadro */
+    margin-top: 4px; /* Margen superior */
+    margin-right: 10%; /* Margen derecho */
+    justify-content: center; /* Centrado del contenido */
+    text-align: center; /* Texto centrado */
+    font-size: 20px; /* Tamaño del texto */
+    background-color: #b73838; /* Color de fondo */
+    border-radius: 7px; /* Bordes redondeados */
+}
+
+/* Cuadro ingreso/salida modo claro*/
+.analytics{
+    border: 2px solid black; /* Borde negro */
+    width: 84%; /* Ancho del mapa */
+    height: 345px; /* Altura del mapa */
+    margin-top: 4px; /* Margen superior */
+    margin-left: 5%; /* Margen derecho */
+    justify-content: center; /* Centrado del contenido */
+    text-align: center; /* Texto centrado */
+    font-size: 20px; /* Tamaño del texto */
+    background-color: #b73838; /* Color de fondo */
+    border-radius: 7px; /* Bordes redondeados */
+}
+
+/* Cuadro de mapa modo oscuro*/
+body.dark .map {
+    border: 2px solid black; /* Borde negro */
+    width: 65%; /* Ancho del mapa */
+    height: 345px; /* Altura del mapa */
+    margin-top: 4px; /* Margen superior */
+    margin-right: 10%; /* Margen derecho */
+    justify-content: center; /* Centrado del contenido */
+    text-align: center; /* Texto centrado */
+    font-size: 20px; /* Tamaño del texto */
+    background-color: #6e6161; /* Color de fondo */
+    border-radius: 7px; /* Bordes redondeados */
+}
+
+/* Cuadro ingreso/salida modo oscuro*/
+body.dark .analytics{
+    border: 2px solid black; /* Borde negro */
+    width: 84%; /* Ancho del mapa */
+    height: 345px; /* Altura del mapa */
+    margin-top: 4px; /* Margen superior */
+    margin-left: 5%; /* Margen derecho */
+    justify-content: center; /* Centrado del contenido */
+    text-align: center; /* Texto centrado */
+    font-size: 20px; /* Tamaño del texto */
+    background-color: #6e6161; /* Color de fondo */
+    border-radius: 7px; /* Bordes redondeados */
+}
+
+/* Botón de aceptar */
+.botonaceptar {
+    background-color: #b73838; /* Color de fondo del botón */
+}
+
+/* Contenedor principal */
+.container {
+    display: flex; /* Uso de flexbox */
+    justify-content: space-between; /* Espacio entre elementos */
+    gap: 20px; /* Espaciado entre los elementos */
+    padding: 20px; /* Espaciado interno */
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Administrador</title>
+    <link rel="stylesheet" href="../css/dashboardAdmin.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body>
+    <script src="../js/sweetalert.js"></script>
+    <nav class="sidebar close" id="sidebar">
+
+        <header>
+
+            <div class="text logo">
+                <span class="name"> ¡Bienvenido!</span> <!-- Texto en la parte superior derecha sidebar-->
+                <span class="profe"> Administrador</span> <!-- Texto en la parte superior derecha sidebar-->
+            </div>
+            <i class="bx bx-menu toggle" id="toggle"></i> <!--Icono de menú-->
+
+        </header>
+
+        <div class="menu-bar"> <!--Apertura de la clase menu-bar-->
+
+            <div class="menu"> <!--Apertura de la clase menu-->
+
+
+                <ul class="menu-links"> <!--Apertura de la clase menu-links-->
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class="bx bx-home alt icon"></i> <!--Icono de home-->
+                            <span class="text nav-next">DASHBOARD</span>
+                            <!--Texto "DASHBOARD" que acompaña al icono"-->
+                        </a><!--Cierre del link DASHBOARD-->
+                    </li><!--Cierre de la lista "nav-link" para DASHBOARD-->
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class="bx bx-user plus alt icon"></i> <!--Icono de adduser-->
+                            <span class="text nav-next">REGISTRAR <br>EMPLEADO</span>
+                            <!--Texto "REGISTRAR EMPLEADO" que acompaña al icono"-->
+                        </a><!--Cierre del link REGISTRAR EMPLEADO-->
+                    </li><!--Cierre de la lista "nav-link" para REGISTRAR EMPLEADO-->
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-user alt icon'></i> <!--Icono de user-->
+                            <span class="text nav-next">EMPLEADOS <br>REGISTRADOS</span>
+                            <!--Texto "EMPELADOS REGISTRADOS" que acompaña al icono"-->
+                        </a><!--Cierre del link EMPELADOS REGISTRADOS-->
+                    </li><!--Cierre de la lista "nav-link" para EMPELADOS REGISTRADOS-->
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-user-x alt icon'></i> <!--Icono de delete-->
+                            <span class="text nav-next">ELIMINAR <br>EMPLEADO</span>
+                            <!--Texto "ELIMINAR EMPLEADO" que acompaña al icono"-->
+                        </a><!--Cierre del link ELIMINAR EMPLEADO-->
+                    </li><!--Cierre de la lista "nav-link" para ELIMINAR EMPLEADO-->
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-objects-vertical-bottom alt icon'></i> <!--Icono de iforme-->
+                            <span class="text nav-next">VER REGISTRO <br> INGRESO/SALIDA</span>
+                            <!--Texto "REGISTRO INGRESOS/SALIDAS" que acompaña al icono"-->
+                        </a><!--Cierre del link REGISTRO INGRESOS/SALIDAS-->
+                    </li><!--Cierre de la lista "nav-link" para REGISTRO INGRESOS/SALIDAS-->
+
+
+                </ul><!--Cierre de la clase "nav-links"-->
+            </div><!--Cierre de la clase "menu"-->
+
+            <div class="bottom-content"> <!--Apertura de clase "bottom-content"-->
+                <li class="">
+                    <a href="#">
+                        <i class='bx bx-log-out alt icon' onclick="out()"></i> <!--Icono log out-->
+                        <span class="text nav-next" onclick="out()">CERRAR
+                            SESIÓN</span><!--Texto "CERRAR SESIÓN" que acompaña al icono-->
+                    </a><!--Cierre de link "bottom-contet"-->
+                </li><!--Cierre de lista ""-->
+
+                <li class="mode">  <!--Apertura clase mode -->
+
+                    <div class="sun-moon">
+                        <i class="bx bx-moon icon moon"></i> <!-- Icono luna-->
+                        <i class="bx bx-sun icon sun"></i>  <!-- Icono sol-->
+                    </div>
+
+                    <span class="mode-text text" id="modeText">SWITCH</span> <!-- Texto en el cuadro-->
+
+                    <div class="toggle-switch" id="modeSwitch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+            </div> <!--Cierre de clase "bottom-contet"-->
+        </div><!--Cierre de la clase "menu-bar"-->
+    </nav><!--Cierre de la clase "Sidebar-close"-->
+
+    <section class="home"> <!-- Apertura clase home, se alamecena todo el contenido principal-->
+        <div class="text">DASHBOARD</div> <!-- Texto en el cuadro-->
+        <main> 
+            <div class="container">
+                <div class="left">
+                    <div class="entrance">INGRESOS DEL DÍA</div> <!-- Texto en el cuadro-->
+                    <div class="leaves">SALIDAS DEL DÍA</div> <!-- Texto en el cuadro-->
+                </div>
+                <div class="map">MAPA DEL PARQUEADERO</div> <!-- Texto en el cuadro-->
+            </div>
+            <div class="analytics">Ingreso / Salida</div> <!-- Texto en el cuadro-->
+
+        </main>
+
+    </section> 
+
+    <script src="../js/dashboardAdmin.js"></script>
+    <a href="#" class="brillo"><img src="/logocss.png" alt="css" /><span></span></a>
+
+</body>
+
+</html>

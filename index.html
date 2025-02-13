@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+    <script src="js/sweetalert.js"></script> <!-- Importa la librería SweetAlert para alertas -->
+    <div class="container" id="cont"> <!-- Contenedor principal -->
+        <div class="container-form"> <!-- Contenedor para el formulario -->
+            <form class="sign-in"> <!-- Formulario de inicio de sesión -->
+                <h2>Iniciar Sesion</h2> <!-- Título del formulario de inicio de sesión -->
+
+                <div class="user-login"> <!-- Contenedor para los íconos de usuario -->
+                    <ion-icon name="people-outline"></ion-icon>
+                    <ion-icon name="person-outline"></ion-icon>
+                    <ion-icon name="people-outline"></ion-icon>
+                </div>
+
+                <span>Use su Usuario y Contraseña para ingresar</span> <!-- Mensaje de ayuda -->
+
+                <div class="container-input"> <!-- Contenedor para el input del usuario -->
+                    <ion-icon name="person-circle-outline"></ion-icon>
+                    <input type="text" id="Usuario" placeholder="Usuario">
+                    <!-- Campo para ingresar el nombre de usuario -->
+                </div>
+
+                <div class="container-input"> <!-- Contenedor para el input de la contraseña -->
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" id="Contraseña" placeholder="Contraseña">
+                    <!-- Campo para ingresar la contraseña -->
+                </div>
+
+                <button class="button" type="button" onclick="ingresar()">INICIAR SESIÓN</button>
+                <!-- Botón para iniciar sesión -->
+            </form>
+        </div>
+
+        <div class="container-form"> <!-- Segundo formulario de "sign-up" -->
+            <form class="sign-up"> <!-- Formulario de registro o más información -->
+                <img src="img/logo-cciingenieros.png" alt=""> <!-- Imagen del logo de la empresa -->
+                <h2>C.C.I INGENIERIA S.A.S</h2> <!-- Nombre de la empresa -->
+            </form>
+        </div>
+
+        <div class="container-welcome"> <!-- Contenedor de bienvenida con dos secciones -->
+            <div class="welcome-sign-up welcome"> <!-- Contenedor de bienvenida para nuevos usuarios -->
+                <h3>¡Bienvenido!</h3> <!-- Título de bienvenida -->
+                <p>Ingrese sus datos para usar las funciones</p> <!-- Mensaje descriptivo -->
+                <button class="button" id="btn-sign-up">MAS INFORMACIÓN</button>
+                <!-- Botón para obtener más información -->
+            </div>
+            <div class="welcome-sign-in welcome"> <!-- Contenedor de bienvenida para la sección de inicio de sesión -->
+                <h3>¡Bienvenido a C.C.I INGENIERIA!</h3> <!-- Título de bienvenida -->
+                <p>Conozca mas sobre nosotros en nuestro sitio web</p> <!-- Mensaje descriptivo -->
+                <a href="https://www.cciing.com/" class="Click">Ingrese aquí</a> <!-- Enlace al sitio web -->
+                <button class="button" id="btn-sign-in">INICIAR SESION</button> <!-- Botón de iniciar sesión -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/codigo.js"></script> <!-- Archivo de JavaScript para funcionalidad adicional -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <!-- Importa Ionicons para usar como módulos -->
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- Importa Ionicons para navegadores que no soportan módulos -->
+
+</body>
+
+</html>

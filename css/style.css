@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'); /* Importa la fuente Montserrat desde Google Fonts */
+
+* {
+    margin: 0; /* Elimina los márgenes por defecto */
+    padding: 0; /* Elimina los rellenos por defecto */
+    box-sizing: border-box; /* Define que el padding y border se incluyan en el tamaño total de los elementos */
+    font-family: "Montserrat", serif; /* Aplica la fuente Montserrat a todos los elementos */
+}
+
+body {
+    width: 100%; /* Ocupa todo el ancho de la ventana */
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    display: flex; /* Utiliza flexbox para alinear los elementos hijos */
+    justify-content: center; /* Centra los elementos hijos horizontalmente */
+    align-items: center; /* Centra los elementos hijos verticalmente */
+    background-color: #f0f4f3; /* Define el color de fondo */
+    background-image: url(../img/img\ fondo\ login.jpg); /* Establece una imagen de fondo */
+}
+
+.container {
+    width: 800px; /* Ancho del contenedor */
+    height: 500px; /* Altura del contenedor */
+    display: flex; /* Define que el contenedor usa flexbox */
+    position: relative; /* Permite posicionar elementos relativos a este contenedor */
+    background-color: white; /* Color de fondo blanco */
+    border-radius: 25px 25px 25px 25px; /* Bordes redondeados */
+    box-shadow: 10px 10px 10px rgb(51, 51, 58); /* Sombra del contenedor */
+}
+
+.container-form {
+    width: 100%; /* El formulario ocupa el 100% del ancho del contenedor */
+    overflow: hidden; /* Oculta cualquier contenido desbordado */
+}
+
+.container-form form {
+    height: 100%; /* El formulario ocupa el 100% de la altura del contenedor */
+    display: flex; /* Usa flexbox en el formulario */
+    flex-direction: column; /* Coloca los elementos en una columna */
+    justify-content: center; /* Centra los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    transition: 0.5s ease-in; /* Añade una transición suave de 0.5 segundos */
+}
+
+.container-form h2 {
+    font-size: 30px; /* Tamaño de fuente */
+    margin-bottom: 20px; /* Margen inferior */
+    font-family: "Montserrat", serif; /* Fuente Montserrat */
+    color: rgb(54, 49, 49); /* Color del texto */
+}
+
+.user-login {
+    display: flex; /* Usa flexbox */
+    gap: 12px; /* Espacio entre los elementos */
+    margin-bottom: 25px; /* Margen inferior */
+}
+
+.user-login ion-icon {
+    border: 1px solid #c9cccb; /* Borde alrededor del ícono */
+    font-size: 18px; /* Tamaño del ícono */
+    border-radius: 6px; /* Bordes redondeados */
+    padding: 8px; /* Relleno dentro del ícono */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el ícono */
+}
+
+.container-form span {
+    font-size: 12px; /* Tamaño de fuente para el span */
+    margin-bottom: 15px; /* Margen inferior */
+}
+
+.container-input {
+    width: 300px; /* Ancho del contenedor de input */
+    height: 40px; /* Altura del contenedor de input */
+    margin-bottom: 10px; /* Margen inferior */
+    display: flex; /* Usa flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    gap: 8px; /* Espacio entre elementos */
+    padding: 0 15px; /* Relleno en los laterales */
+    background-color: #eeeeee; /* Color de fondo del contenedor */
+}
+
+.container-input input {
+    border: none; /* Sin borde en el input */
+    outline: none; /* Sin borde al enfocar */
+    width: 100%; /* El input ocupa todo el ancho disponible */
+    height: 100%; /* El input ocupa toda la altura disponible */
+    background-color: inherit; /* El color de fondo hereda del contenedor */
+}
+
+.container-form a {
+    color: black; /* Color del enlace */
+    font-size: 14px; /* Tamaño de la fuente del enlace */
+    margin-bottom: 20px; /* Margen inferior */
+    margin-top: 5px; /* Margen superior */
+}
+
+.button {
+    width: 170px; /* Ancho del botón */
+    height: 45px; /* Altura del botón */
+    font-size: 15px; /* Tamaño de la fuente dentro del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-top: 10px; /* Margen superior */
+    background-color: #b73838; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+}
+
+/*animación*/
+
+.sign-up {
+    transform: translateX(-100%); /* Desplaza la sección sign-up fuera de la vista hacia la izquierda */
+}
+
+.container.toggle .sign-in {
+    transform: translateX(100%); /* Desplaza la sección sign-in fuera de la vista hacia la derecha cuando el contenedor tiene la clase toggle */
+}
+
+.container.toggle .sign-up {
+    transform: translateX(0); /* Trae la sección sign-up a la vista cuando el contenedor tiene la clase toggle */
+}
+
+/*Welcome*/
+.container-welcome {
+    position: absolute; /* Posiciona el contenedor de bienvenida de forma absoluta */
+    width: 50%; /* Ocupa la mitad del ancho del contenedor padre */
+    height: 100%; /* Ocupa toda la altura del contenedor padre */
+    display: flex; /* Usa flexbox */
+    align-items: center; /* Centra verticalmente */
+    transform: translateX(100%); /* Desplaza fuera de la vista hacia la derecha */
+    background-color: #b73838; /* Color de fondo rojo oscuro */
+    transition: transform 0.5s ease-in-out, border-radius 0.5s ease-in-out; /* Transición de transformación y de bordes redondeados */
+    overflow: hidden; /* Oculta el desbordamiento */
+    border-radius: 50% 0 50% 0; /* Bordes redondeados con un diseño personalizado */
+}
+
+.container.toggle .container-welcome {
+    transform: translateX(0); /* Devuelve el contenedor de bienvenida a la vista cuando tiene la clase toggle */
+    border-radius: 0 50% 0 50%; /* Cambia los bordes redondeados al activarse */
+    background-color: #b73838; /* Mantiene el color de fondo */
+}
+
+.container-welcome .welcome {
+    position: absolute; /* Posiciona el contenido de bienvenida de manera absoluta */
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Coloca los elementos en una columna */
+    align-items: center; /* Centra horizontalmente */
+    gap: 20px; /* Espacio entre los elementos */
+    padding: 0 50px; /* Relleno lateral */
+    color: white; /* Color del texto blanco */
+    transition: transform 0.5s ease-in-out; /* Transición suave en la transformación */
+}
+
+.welcome-sign-in {
+    transform: translateX(100%); /* Desplaza la sección de bienvenida de sign-in fuera de la vista hacia la derecha */
+}
+
+.container-welcome h3 {
+    font-size: 40px; /* Tamaño de la fuente del título */
+}
+
+.container-welcome p {
+    font-size: 14px; /* Tamaño de la fuente del párrafo */
+    text-align: center; /* Alinea el texto al centro */
+}
+
+.container-welcome .button {
+    border: 2px solid white; /* Borde blanco */
+    background-color: transparent; /* Fondo transparente */
+    padding: 5px; /* Relleno dentro del botón */
+}
+
+.container.toggle .welcome-sign-in {
+    transform: translateX(0); /* Trae la sección de bienvenida sign-in a la vista cuando el contenedor tiene la clase toggle */
+}
+
+.container.toggle .welcome-sign-up {
+    transform: translateX(-100%); /* Desplaza la sección de bienvenida sign-up fuera de la vista hacia la izquierda cuando el contenedor tiene la clase toggle */
+}
+
+.Click {
+    color: rgb(55, 47, 47); /* Color del texto */
+    text-decoration: none; /* Elimina el subrayado en el enlace */
+}
+.botonaceptar{
+    background-color: #b73838;
+}
